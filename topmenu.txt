@@ -1,0 +1,760 @@
+<html><head>
+<title>Поиск: Президент Дата принятия c 11.01.2021 НАЗНАЧЕНИЕ </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="?style.css">
+<link rel="stylesheet" type="text/css" href="?layout.css">
+<link rel="icon" href="?favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="?favicon.ico" type="image/x-icon">
+<style type="text/css">
+table.menu_workspace { width: 100%; }
+table.menu_workspace td { vertical-align: top; }
+table.menu_workspace tr.cur { background-color: #fff4b7; }
+table.menu_workspace td.hdr { padding: 2px 5px; }
+table.menu_workspace td.chk { width: 1px; padding-right: 5px; }
+table.menu_workspace td.dsc { padding: 2px 0px; }
+</style>
+<script type="text/javascript" src="?json.js" charset="windows-1251"></script>
+<script type="text/javascript" src="?script.js" charset="windows-1251"></script>
+<script type="text/javascript">
+	top.pname = new Array();
+	top.pvalue = new Array();
+	top.poldvalue = new Array();
+	top.dataselect = 4;
+	document.pPath='?';
+	top.pname[0] = "bpas";
+	top.pvalue[0] = "cd00000";
+	top.pname[1] = "a3";
+	top.pvalue[1] = "";
+	top.pname[2] = "a3type";
+	top.pvalue[2] = "1";
+	top.pname[3] = "a3value";
+	top.pvalue[3] = "";
+	top.pname[4] = "a6";
+	top.pvalue[4] = "102000070";
+	top.pname[5] = "a6type";
+	top.pvalue[5] = "1";
+	top.pname[6] = "a6value";
+	top.pvalue[6] = "Президент";
+	top.pname[7] = "a15";
+	top.pvalue[7] = "";
+	top.pname[8] = "a15type";
+	top.pvalue[8] = "1";
+	top.pname[9] = "a15value";
+	top.pvalue[9] = "";
+	top.pname[10] = "a7type";
+	top.pvalue[10] = "4";
+	top.pname[11] = "a7from";
+	top.pvalue[11] = "11.01.2021";
+	top.pname[12] = "a7to";
+	top.pvalue[12] = "";
+	top.pname[13] = "a7date";
+	top.pvalue[13] = "";
+	top.pname[14] = "a8";
+	top.pvalue[14] = "";
+	top.pname[15] = "a8type";
+	top.pvalue[15] = "1";
+	top.pname[16] = "a1";
+	top.pvalue[16] = "";
+	top.pname[17] = "a0";
+	top.pvalue[17] = "";
+	top.pname[18] = "a16";
+	top.pvalue[18] = "";
+	top.pname[19] = "a16type";
+	top.pvalue[19] = "1";
+	top.pname[20] = "a16value";
+	top.pvalue[20] = "";
+	top.pname[21] = "a17";
+	top.pvalue[21] = "";
+	top.pname[22] = "a17type";
+	top.pvalue[22] = "1";
+	top.pname[23] = "a17value";
+	top.pvalue[23] = "";
+	top.pname[24] = "a4";
+	top.pvalue[24] = "";
+	top.pname[25] = "a4type";
+	top.pvalue[25] = "1";
+	top.pname[26] = "a4value";
+	top.pvalue[26] = "";
+	top.pname[27] = "a23";
+	top.pvalue[27] = "102006375";
+	top.pname[28] = "a23type";
+	top.pvalue[28] = "1";
+	top.pname[29] = "a23value";
+	top.pvalue[29] = "НАЗНАЧЕНИЕ";
+	top.pname[30] = "textpres";
+	top.pvalue[30] = "";
+	top.pname[31] = "sort";
+	top.pvalue[31] = "7";
+	top.pname[32] = "x";
+	top.pvalue[32] = "62";
+	top.pname[33] = "y";
+	top.pvalue[33] = "15";
+	top.plen =34;
+</script>
+</head>
+
+<body style="overflow:hidden; overflow-x:auto">
+<iframe id="temp_iframe" name="save_settings_iframe" src="?stub" style="position:absolute; top: -500px; left: -500px; visibility: hidden"></iframe>
+<table class="root">
+<tbody><tr>
+<td class="header">
+
+<!-- BEGIN шапка -->
+
+	<table class="global_header">
+	<tbody><tr>
+	<td class="text">
+<span class="sh1">Результаты&nbsp;поиска:</span>
+	</td>
+	<td class="pics">
+<div id="res_pic_frame_maximize" class="vis"><a href="javascript:void(0);" onclick="maximizeFrame()"><img src="?pic_hide2right.gif" alt="Развернуть панель" title="Развернуть панель"></a></div>
+<div id="res_pic_frame_minimize" class="inv"><a href="javascript:void(0);" onclick="restoreFrame()"><img src="?pic_hide2left.gif" alt="Свернуть панель" title="Свернуть панель"></a></div>
+	</td>
+	</tr>
+	</tbody></table>
+
+
+
+</td>
+</tr>
+
+<tr>
+<td class="search_results">
+
+<div class="search_results_root">
+
+
+<!-- BEGIN блок с "выпадающими" меню -->
+
+
+	<table class="clps search_results_content">
+
+	<tbody><tr>
+	<td>
+
+		<table class="block_head">
+		<tbody><tr>
+		<td><img src="?pic_print.gif" alt="Печать списка" title="Печать списка" class="pic_n" onclick="printChecked(null, 'cd00000','empire=', 'collection=')"><img src="?pic_rtf.gif" alt="Экспорт списка в RTF" title="Экспорт списка в RTF" class="pic_n" onclick="printChecked('rtf', 'cd00000','empire=', 'collection=');">
+<form method="GET" id="changeQueryForm" target="_top" action="?" style="display:none">
+<input type="hidden" name="start_search"><input type="hidden" name="fattrib" value="1"> <!-- ___ --> <input type="HIDDEN" name="a0" value="">   
+ <input type="HIDDEN" name="a1" value="">   
+ <input type="HIDDEN" name="a15" value="">   
+ <input type="HIDDEN" name="a15label" value="">   
+ <input type="HIDDEN" name="a15type" value="1">   
+ <input type="HIDDEN" name="a15value" value="">   
+ <input type="HIDDEN" name="a16" value="">   
+ <input type="HIDDEN" name="a16label" value="">   
+ <input type="HIDDEN" name="a16type" value="1">   
+ <input type="HIDDEN" name="a16value" value="">   
+ <input type="HIDDEN" name="a17" value="">   
+ <input type="HIDDEN" name="a17label" value="">   
+ <input type="HIDDEN" name="a17type" value="1">   
+ <input type="HIDDEN" name="a17value" value="">   
+ <input type="HIDDEN" name="a23" value="102006375">   
+ <input type="HIDDEN" name="a23label" value="">   
+ <input type="HIDDEN" name="a23type" value="1">   
+ <input type="HIDDEN" name="a23value" value="НАЗНАЧЕНИЕ">   
+ <input type="HIDDEN" name="a24" value="">   
+ <input type="HIDDEN" name="a24label" value="">   
+ <input type="HIDDEN" name="a3" value="">   
+ <input type="HIDDEN" name="a3label" value="">   
+ <input type="HIDDEN" name="a3type" value="1">   
+ <input type="HIDDEN" name="a3value" value="">   
+ <input type="HIDDEN" name="a4" value="">   
+ <input type="HIDDEN" name="a44" value="">   
+ <input type="HIDDEN" name="a44type" value="">   
+ <input type="HIDDEN" name="a47" value="">   
+ <input type="HIDDEN" name="a4label" value="">   
+ <input type="HIDDEN" name="a4type" value="1">   
+ <input type="HIDDEN" name="a4value" value="">   
+ <input type="HIDDEN" name="a52" value="">   
+ <input type="HIDDEN" name="a52type" value="">   
+ <input type="HIDDEN" name="a6" value="102000070">   
+ <input type="HIDDEN" name="a6label" value="">   
+ <input type="HIDDEN" name="a6type" value="1">   
+ <input type="HIDDEN" name="a6value" value="Президент">   
+ <input type="HIDDEN" name="a7" value="">   
+ <input type="HIDDEN" name="a7date" value="">   
+ <input type="HIDDEN" name="a7from" value="11.01.2021">   
+ <input type="HIDDEN" name="a7to" value="">   
+ <input type="HIDDEN" name="a7type" value="4">   
+ <input type="HIDDEN" name="a8" value="">   
+ <input type="HIDDEN" name="a8type" value="1">   
+ <input type="HIDDEN" name="v15" value="">   
+ <input type="HIDDEN" name="v16" value="">   
+ <input type="HIDDEN" name="v17" value="">   
+ <input type="HIDDEN" name="v24" value="">   
+ <input type="HIDDEN" name="v3" value="">   
+ <input type="HIDDEN" name="v4" value="">   
+ <input type="HIDDEN" name="v7" value="">   
+ <input type="HIDDEN" name="sort" value="7">  
+</form>		</td>
+		<td class="pics">
+			<table class="clps" style="width: 100%;">
+			<tbody><tr>
+
+			<td style="width: 10px;">
+<img src="?pic_edit.gif" onclick="changeQuery()" alt="Редактирование запроса" title="Редактирование запроса" class="pic_n">
+			</td>
+			<td style="width: 10px;" onmouseover="showBlock('dd_config');" onmouseout="killBlock('dd_config');" id="configtd">
+
+<div style="position: relative; ">
+<img src="?pic_config.gif" alt="Настройки" title="Настройки" class="pic_n" onmouseover="showWspaceState();">
+
+	<div id="dd_config" style="display: none; position: absolute; right: 0pt; top: 24px;">
+
+<table class="clps" style="width: 20px; ">
+<tbody><tr>
+<td>
+
+		<div style="z-index: 2000; position: relative; top: 0pt; width: 100%;">
+			<table class="clps window_fade">
+			<tbody><tr>
+			<td class="window_fade">
+
+				<div style="position: relative; height: 100%;">
+					<table class="clps window" style="background-color: rgb(255, 255, 255);">
+					<tbody><tr>
+					<td>
+
+						<table class="dd_data">
+						<tbody><tr>
+						<td class="head"><span class="tiny bold"><nobr>Рабочее пространство</nobr></span></td>
+						</tr>
+						<tr>
+						<td class="elements">
+<ul class="dd_links">
+<li title="Восстановление рабочего пространства по умолчанию"><a href="javascript:void(0);" onclick="var cookies = new cookiePrefs(); cookies.clear(['workspaceState', 'wFilterSize','theme-contents','font-size-contents','theme-document','font-size-document']); top.location.reload(true);">Восстановить&nbsp;по&nbsp;умолчанию</a></li>
+</ul>
+<div style="width: 100%; height: 1px; background-color: rgb(221, 221, 221);"><img src="?spacer.gif"></div>
+<form style="margin: 5px 0pt;">
+<table class="clps menu_workspace">
+<tbody><tr>
+<td colspan="2" class="hdr">
+<span class="zzztiny bold" style="width: 100%;">Вид рабочего пространства:</span>
+</td>
+</tr>
+<tr>
+<td class="chk"><input id="workspace_default" name="wspace" checked="checked" type="radio" onclick="saveWorkspaceState(false); top.location.reload(true);"></td>
+<td class="dsc">Список результатов + текст документа <nobr>(по умолчанию)</nobr></td>
+</tr>
+<tr>
+<td class="chk"><input id="workspace_list" name="wspace" type="radio" onclick="saveWorkspaceState(true); top.location.reload(true);"></td>
+<td class="dsc">Только список результатов</td>
+</tr>
+</tbody></table>
+</form>
+						</td>
+						</tr>
+						</tbody></table>
+					</td>
+					</tr>
+
+					</tbody></table>
+				</div>
+			</td>
+			</tr>
+			</tbody></table>
+	</div>
+
+	<div style="z-index: 1500; position: relative; top: -100%; height: 100%; width: 100%;">
+<iframe src="about:blank" style="height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe>
+
+	</div>
+
+</td>
+</tr>
+</tbody></table>
+
+
+	</div>
+
+</div>
+			</td>
+	
+			
+			<td style="width: 10px;" onmouseover="showBlock('dd_queries');" onmouseout="killBlock('dd_queries');">
+
+<div style="position: relative; ">
+<img src="?pic_query.gif" alt="Запросы" title="Запросы" class="pic_n">
+
+	<div id="dd_queries" style="display: none; position: absolute; right: 0pt; top: 24px;">
+
+<table class="clps" style="width: 20px; ">
+<tbody><tr>
+<td>
+		<div style="z-index: 2000; position: relative; top: 0pt;  width: 100%;">
+			<table class="clps window_fade">
+			<tbody><tr>
+			<td class="window_fade">
+
+				<div style="position: relative; height: 100%;">
+					<table class="clps window" style="background-color: rgb(255, 255, 255);">
+					<tbody><tr>
+					<td>
+						<table class="dd_data">
+						<tbody><tr>
+						<td class="head"><span class="tiny bold">Запросы</span></td>
+						</tr>
+
+						<tr>
+						<td class="elements">
+<ul class="dd_links">
+<li title="Редактирование текущего запроса"><a href="javascript:void(0);" onclick="changeQuery()">Редактировать</a></li>
+<li title="Сохранение текущего запроса"><a href="javascript:void(0);" onclick="saveQuery('Президент Дата принятия c 11.01.2021 НАЗНАЧЕНИЕ ',top.location.href);hideBlock('dropdown_query');">Сохранить</a></li>	
+<li title="Сохранение текущего запроса"><a href="javascript:void(0);" onclick="viewQuerys();hideBlock('dropdown_query');">Сохраненные запросы</a></li>	
+</ul>
+						</td>
+						</tr>
+
+						</tbody></table>
+					</td>
+					</tr>
+					</tbody></table>
+				</div>
+			</td>
+			</tr>
+			</tbody></table>
+	</div>
+
+	<div style="z-index: 1500; position: relative; top: -100%; height: 100%; width: 100%;">
+<iframe src="about:blank" style="height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe>
+	</div>
+
+</td>
+</tr>
+</tbody></table>
+
+
+	</div>
+
+</div>
+
+			</td>
+			<td style="width: 10px;" onmouseover="showBlock('dd_sets');" onmouseout="killBlock('dd_sets');">
+<div style="position: relative; ">
+<img src="?pic_sets.gif" alt="Подборки" title="Подборки" class="pic_n">
+
+	<div id="dd_sets" style="display: none; position: absolute; right: 0pt; top: 24px;">
+
+<table class="clps" style="width: 20px; ">
+<tbody><tr>
+<td>
+		<div style="z-index: 2000; position: relative; top: 0pt;  width: 100%;">
+			<table class="clps window_fade">
+
+			<tbody><tr>
+			<td class="window_fade">
+
+				<div style="position: relative; height: 100%;">
+					<table class="clps window" style="background-color: rgb(255, 255, 255);">
+					<tbody><tr>
+					<td>
+						<table class="dd_data">
+						<tbody><tr>
+
+						<td class="head"><span class="tiny bold">Подборки</span></td>
+						</tr>
+						<tr>
+						<td class="elements">
+
+<ul class="dd_links">
+<li title="Создание новой подборки из отмеченных документов"><a href="javascript:void(0);" onclick="showSets('create');hideBlock('dropdown_sets');">Создать</a></li>
+<li title="Удаление отмеченных документов из подборки"><a href="javascript:void(0);" style="color: gray">Удалить документ</a></li>
+<li title="Работа с существующими подборками документов"><a href="javascript:void(0);" onclick="showSets('show');hideBlock('dropdown_sets');">Сохраненные&nbsp;подборки</a></li>
+</ul>
+						</td>
+						</tr>
+						</tbody></table>
+					</td>
+					</tr>
+					</tbody></table>
+				</div>
+
+			</td>
+			</tr>
+			</tbody></table>
+	</div>
+
+	<div style="z-index: 1500; position: relative; top: -100%; height: 100%; width: 100%;">
+<iframe src="about:blank" style="height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe>
+	</div>
+
+</td>
+
+</tr>
+</tbody></table>
+
+
+	</div>
+
+</div>
+			</td>
+			<td style="width: 10px;">				<div style="position: relative; ">
+					<img src="?pic_bookmarks.gif" alt="Сохраненные закладки" title="Сохраненные закладки" class="pic_n" onclick="showBookmarks('cd00000','', false);">
+				</div></td>
+		</tr>
+	</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<div id="search_params" style="display:block">
+		<table class="clps search_params">
+		<tbody><tr>
+		<td class="inset">
+<!-- BEGIN для результатов поиска -->
+<!--  -->
+
+<div class="search_conditions_dbs" "="">
+<span class="bold">Текущие БПА:</span><br>
+<div>
+<ul class="nomarker search_conditions_dbs">
+				<li>ФЕДЕРАЛЬНОЕ ЗАКОНОДАТЕЛЬСТВО</li>
+</ul>
+</div>
+</div>
+
+<div class="block_conditions_content">
+<!-- BEGIN для атрибутного поиска -->
+
+<span class="bold">Атрибуты&nbsp;поиска:</span>
+
+
+
+<table class="search_conditions">
+<tbody><tr>
+<td>
+Президент <br>Дата принятия c 11.01.2021 <br>НАЗНАЧЕНИЕ <br>
+</td>
+</tr></tbody></table>
+
+</div>
+
+		</td>
+		</tr>
+		</tbody></table>
+</div>
+
+<div style="position: relative;">
+
+<script type="text/javascript" src="?listsel.js" charset="windows-1251"></script>
+
+<div id="search_results_format" style="display:block">
+		<table class="block_head" style="position: relative">
+		<tbody><tr>
+
+		<td class="text">
+<span class="bold"><span class="large">151</span> документ</span>
+		</td>
+		<td class="pics">
+			<table class="clps" style="width: 100%; position: relative; z-index: 0">
+			<tbody><tr>
+			<td style="width: 10px;">
+<img src="?pic_selall.gif" alt="Отметить все" title="Отметить все" class="pic_n" onclick="top.CurrentListSelection.selectAll(); MarkSelectedDocuments(); /*checkAll();*/">
+			</td>
+			<td style="width: 10px;">
+<img src="?pic_selnone.gif" alt="Снять отметки со всех" title="Снять отметки со всех" class="pic" onclick="top.CurrentListSelection.selectNone(); MarkSelectedDocuments(); /*clearAll();*/">
+			</td>
+			<td style="width: 10px;">
+<img src="?pic_selinv.gif" alt="Инвертировать выделение" title="Инвертировать выделение" class="pic" onclick="top.CurrentListSelection.inverseSelection(); MarkSelectedDocuments()">
+			</td>
+			<td style="width: 10px;" onmouseover="showBlock('dd_queries1');" onmouseout="killBlock('dd_queries1');">
+
+<div style="position: relative; z-index: 200;">
+<img src="?pic_style.gif" alt="Изменить стиль оформления" title="Изменить стиль оформления" class="pic_n">
+<!-- BEGIN выпадающее меню стиля оформления -->
+	<div id="dd_queries1" style="display: none; position: absolute; right: 0; top: 24px;">
+
+<table class="clps" style="width: 195px;">
+<tbody><tr>
+<td>
+		<div style="z-index: 2000; position: relative; top: 0; width: 100%;">
+			<table class="clps window_fade">
+			<tbody><tr>
+			<td class="window_fade">
+
+				<div style="position:relative; height: 100%;">
+					<table class="clps window" style="background-color: #fff;">
+
+					<tbody><tr>
+					<td>
+						<table class="dd_data">
+						<tbody><tr>
+						<td class="head"><span class="tiny bold">Оформление</span></td>
+						</tr>
+						<tr>
+						<td class="elements">
+
+<div class="dd_desc">
+<span class="tiny">Выберите предпочитаемый стиль оформления списка документов:</span>
+</div>
+<div class="style_default" onclick="changeListStyle('list_results_bg_default');killBlock('dd_queries1');" onmouseover="this.style.borderColor='#fff4b7';style.cursor='pointer';" onmouseout="this.style.borderColor='#fff';style.cursor='';">
+Стандарт
+</div>
+<div class="style_bg_grey" onclick="changeListStyle('list_results_bg_grey');killBlock('dd_queries1');" onmouseover="this.style.borderColor='#fff4b7';style.cursor='pointer';" onmouseout="this.style.borderColor='#fff';style.cursor='';">
+Черный текст на&nbsp;сером фоне
+</div>
+<div class="style_bg_black" onclick="changeListStyle('list_results_bg_black');killBlock('dd_queries1');" onmouseover="this.style.borderColor='#fff4b7';style.cursor='pointer';" onmouseout="this.style.borderColor='#fff';style.cursor='';">
+Белый текст на&nbsp;черном фоне
+</div>
+						</td>
+
+						</tr>
+						</tbody></table>
+					</td>
+					</tr>
+					</tbody></table>
+				</div>
+			</td>
+			</tr>
+			</tbody></table>
+
+	</div>
+
+	<div style="z-index: 1500; position: relative; top: -100%; height: 100%; width: 100%;">
+<iframe frameborder="0" scrolling="no" src="about:blank" style="height: 100%; width: 100%;"></iframe>
+	</div>
+
+</td>
+</tr>
+</tbody></table>
+
+
+	</div>
+
+
+</div>
+			</td>
+			<td style="width: 10px;" onmouseover="showBlock('dd_sets1');" onmouseout="killBlock('dd_sets1');">
+<div style="position: relative; z-index: 200;">
+<img src="?pic_text.gif" alt="Изменить размер шрифта" title="Изменить размер шрифта" class="pic">
+<!-- BEGIN выпадающее меню размера шрифта -->
+	<div id="dd_sets1" style="display: none; position: absolute; right: 0; top: 24px;">
+
+<table class="clps" style="width: 300px; ">
+<tbody><tr>
+<td>
+		<div style="z-index: 2000; position: relative; top: 0;  width: 100%;">
+
+			<table class="clps window_fade">
+			<tbody><tr>
+			<td class="window_fade">
+
+				<div style="position:relative; height: 100%;">
+					<table class="clps window" style="background-color: #fff;">
+					<tbody><tr>
+					<td>
+						<table class="dd_data">
+
+						<tbody><tr>
+						<td class="head"><span class="tiny bold">Размер шрифта</span></td>
+						</tr>
+						<tr>
+						<td class="elements">
+<div class="dd_desc">
+<span class="tiny">Выберите наиболее удобный для&nbsp;Вас размер шрифта:</span>
+</div>
+
+<div class="font" onclick="changeListFont('t_tiny');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_tiny">
+<span class="t_tiny">Очень мелкий</span>
+</div>
+<div class="font" onclick="changeListFont('t_small');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_small">
+<span class="t_small">Мелкий</span>
+</div>
+<div class="font_cur" onclick="changeListFont('t_normal');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_normal">
+<span class="t_normal">Средний</span>
+</div>
+<div class="font" onclick="changeListFont('t_standart');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_standart">
+<span class="t_standart">Стандарт</span>
+</div>
+<div class="font" onclick="changeListFont('t_large');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_large">
+<span class="t_large">Крупный</span>
+</div>
+<div class="font" onclick="changeListFont('t_huge');killBlock('dd_sets1')" onmouseover="this.style.borderColor='#fff4b7';try{this.style.cursor='pointer'}catch(e){this.style.cursor='hand'}" onmouseout="this.style.borderColor='#fff';this.style.cursor=''" id="font_menu_t_huge">
+<span class="t_huge">Очень крупный</span>
+</div>
+						</td>
+						</tr>
+						</tbody></table>
+
+					</td>
+					</tr>
+					</tbody></table>
+				</div>
+			</td>
+			</tr>
+			</tbody></table>
+	</div>
+
+	<div style="z-index: 1500; position: relative; top: -100%; height: 100%; width: 100%;">
+<iframe frameborder="0" scrolling="no" src="about:blank" style="height: 100%; width: 100%;"></iframe>
+	</div>
+
+</td>
+</tr>
+</tbody></table>
+
+
+	</div>
+
+</div>
+			</td>
+
+			</tr>
+			</tbody></table>
+		</td>
+		</tr>
+		</tbody></table>
+</div>
+		<table class="clps search_params">
+
+		<tbody><tr>
+		<td class="inset" style="padding:2px 5px;">
+
+		<div id="search_results_list_params_short" class="search_results_list_params_short" style="display:none">
+			<table class="clps">
+			<tbody><tr>
+			<td>
+<span class="tiny"><nobr>cортировать:</nobr></span>
+<select name="sort" onchange="changeSortOrder(7,options[selectedIndex].value)">
+<option value="1">По наименованию</option>
+<option value="7" selected="selected">По убыванию даты</option>
+<option value="-7">По возрастанию даты</option>
+<option value="8">По номеру документа</option>
+<option value="3">По виду документа</option>
+</select>
+			</td>
+			<td style="padding-left:15px;">
+<span class="tiny"><nobr>выводить по:</nobr></span>
+<select name="docs_per_page" onchange="changeListSize(this.value);">
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="20" selected="selected">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+</select>
+			</td>
+			</tr>
+			</tbody></table>
+			<div style="padding:5px 2px;">
+<span class="bold">Страницы:&nbsp;</span>
+<div class="pager">
+<nobr><span>1</span><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=20">2</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=40">3</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=60">4</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=80">5</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=100">6</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=120">7</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=140">8</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=20" id="nextPage"><img src="?ars_right.gif" alt="Далее" title="Следующая"></a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=140"><img src="?ars_right_lim.gif" alt="В конец" title="В конец"></a></nobr>
+
+</div>
+			</div>
+		</div>
+
+		<div id="search_results_list_params_full" style="display:block">
+			<div style="padding-top:4px;">
+				<table>
+				<tbody><tr>
+				<td>
+<span class="tiny"><nobr>cортировать:</nobr></span>
+
+				</td>
+				<td style="padding-left:2px;">
+<select name="sort" onchange="changeSortOrder('7',options[selectedIndex].value)">
+<option value="1">По наименованию</option>
+<option value="7" selected="selected">По убыванию даты</option>
+<option value="-7">По возрастанию даты</option>
+<option value="8">По номеру документа</option>
+<option value="3">По виду документа</option>
+</select>
+				</td>
+<td style="vertical-align: top; padding-left: 2px;"><img src="?pic_sort.gif" alt="Сортировка по нескольким атрибутам" title="Сортировка по нескольким атрибутам" align="absmiddle" onclick="sortMultiple();"></td>
+				</tr>
+				</tbody></table>
+
+			</div>
+			<div style="padding:4px 2px;">
+<span class="bold">Страницы:&nbsp;</span>
+<div class="pager">
+<nobr><span>1</span><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=20">2</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=40">3</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=60">4</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=80">5</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=100">6</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=120">7</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=140">8</a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=20" id="nextPage"><img src="?ars_right.gif" alt="Далее" title="Следующая"></a><a href="?searchlist=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;start=140"><img src="?ars_right_lim.gif" alt="В конец" title="В конец"></a></nobr>
+</div>
+			</div>
+			<div style="padding-top:4px; padding-bottom:3px;">
+				<table>
+				<tbody><tr>
+				<td style="padding-top:4px;">
+<span class="tiny_bold">
+Аннотации: <nobr>с 1 по 20</nobr>
+</span>
+				</td>
+
+				<td style="padding-left:20px;">
+<span class="tiny"><nobr>выводить по:</nobr></span>
+<select name="docs_per_page" onchange="changeListSize(this.value);">
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="20" selected="selected">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+</select>
+				</td>
+				</tr>
+
+				</tbody></table>
+			</div>
+		</div>
+
+		</td>
+		</tr>
+		</tbody></table>
+
+</div>
+
+
+		<table style="width: 100%; background-color: #f5f5f5;">
+		<tbody><tr>
+		<td style="text-align:right; padding:1px 0;">
+	<div id="block_conditions_panel_kill" class="vis"><img src="?ar_block_hide.gif" alt="Свернуть панель" title="Свернуть панель" onclick="setExpandedPanel(false);
+																							killBlock('search_params');
+																							killBlock('search_results_format'); 
+																							killBlock('search_results_list_params_full'); 
+																							killBlock('block_conditions_panel_kill'); 
+																							showBlock('search_results_list_params_short'); 
+																							showBlock('block_conditions_panel_show');"></div><div id="block_conditions_panel_show" class="inv"><img src="?ar_block_show.gif" alt="Развернуть панель" title="Развернуть панель" onclick="setExpandedPanel(true);
+																								showBlock('search_params');
+																								showBlock('search_results_format'); 
+																								killBlock('search_results_list_params_short'); 
+																								showBlock('search_results_list_params_full'); 
+																								killBlock('block_conditions_panel_show'); 
+																								showBlock('block_conditions_panel_kill');"></div>
+		</td>
+		</tr>
+		</tbody></table>
+	</td>
+	</tr>
+	<tr>
+	<td class="list">
+
+<iframe id="list" frameborder="0" src="?list_itself=&amp;bpas=cd00000&amp;a3=&amp;a3type=1&amp;a3value=&amp;a6=102000070&amp;a6type=1&amp;a6value=%CF%F0%E5%E7%E8%E4%E5%ED%F2&amp;a15=&amp;a15type=1&amp;a15value=&amp;a7type=4&amp;a7from=11.01.2021&amp;a7to=&amp;a7date=&amp;a8=&amp;a8type=1&amp;a1=&amp;a0=&amp;a16=&amp;a16type=1&amp;a16value=&amp;a17=&amp;a17type=1&amp;a17value=&amp;a4=&amp;a4type=1&amp;a4value=&amp;a23=102006375&amp;a23type=1&amp;a23value=%CD%C0%C7%CD%C0%D7%C5%CD%C8%C5&amp;textpres=&amp;sort=7&amp;x=62&amp;y=15&amp;page=first"></iframe>
+	</td>
+	</tr>
+	<tr>
+	<td class="divider"><img src="?spacer.gif" height="1pt"></td>
+
+	</tr>
+	</tbody></table>
+
+
+</div>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+
+</tbody></table>
+
+
+
+</body></html>
