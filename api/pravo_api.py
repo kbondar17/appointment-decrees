@@ -151,22 +151,3 @@ class PravoInterface:
         return docs_links
 
 
-
-if __name__ == "__main__":
-    gov_body = 'Президен'
-    gov_body = 'государственная дума'
-    date_type = 'Период' 
-    # date = '01.01.2017'
-    date_from = '01.10.2021'
-    date_to = '01.05.2022'
-    doc_number = '' 
-    key_word = 'назначить'
-
-    api = PravoInterface(gov_body=gov_body, date_type=date_type, date_from=date_from, date_to=date_to, key_word=key_word, doc_number=doc_number)
-    r = api.get_docs()
-    r = [item for sublist in r for item in sublist]
-
-    with open('duma_links.txt', 'w') as f:
-        f.write('\n'.join(r))
-    
-        
