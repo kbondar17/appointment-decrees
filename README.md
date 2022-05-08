@@ -1,4 +1,4 @@
-#  Базы законодательных актов РФ
+#  База законодательных актов РФ
 
 Это апи для http://pravo.gov.ru/proxy/ips/?start_search&fattrib=1
 
