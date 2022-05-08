@@ -1,0 +1,5 @@
+fake_useragent==0.1.11
+requests==2.27.1
+selenium==4.1.5
+typer==0.4.1
+python-dotenv==0.20.0

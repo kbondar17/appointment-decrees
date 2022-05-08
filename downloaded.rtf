@@ -1,161 +1,18 @@
-<html lang="ru" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251; charset=windows-1251">
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary="----=_NextPart_01CAD650.0093E2A0"
 
-    
-    <link rel="stylesheet" type="text/css" href="?doc_itself.css">
-    
+Данный документ является веб-страницей в одном файле, также называемой файлом веб-архива.  Если вы видите это сообщение, значит данный обозреватель или редактор не поддерживает файлы веб-архива.  Загрузите обозреватель, поддерживающий веб-архивы, например Microsoft Internet Explorer.
 
-    <script type="text/javascript" src="?script.js" charset="windows-1251"></script>
-    <script type="text/javascript" src="?json.js" charset="windows-1251"></script>
-    <script type="text/javascript">
+------=_NextPart_01CAD650.0093E2A0
+Content-Location: file:///C:/B1334631/001.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="windows-1251"
 
-        var bookMarkNumber = parseInt('', 10);
-        var textCompleted = 'True'.toLowerCase() == 'true';
-        var scrollTop = parseInt('', 10);
-
-        function goToMark() {
-            window.location.hash = "I0";
-        }
-
-        function changeFontOnLoad() {
-            if(window.parent.changeDocFont != null) {
-                window.parent.changeDocFont('t_normal');
-            }
-        }
-
-        function printOnLoad() {
-            
-        }
-
-        function loadFullText() {
-            if (textCompleted)
-                return;
-            var supportPageOffset = window.pageXOffset !== undefined;
-			var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-			var scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-            var textContent = document.getElementById("text_content");
-            textContent.innerHTML = '';
-            textContent.appendChild(createSpinner('?'));
-            var newUrl = document.location.href.split('#')[0];
-            newUrl += '&fulltext=1&scrolltop=' + scrollTop;
-            window.location.href = newUrl;
-            FixImagesIE();
-        }
-		function LinkParseHash(){
-					var cells = document.getElementsByTagName("a"); 
-					for (var i = 0; i < cells.length; i++) { 
-						var status = cells[i].setAttribute("target","_parent"); 
-						cells[i].setAttribute("href",cells[i].getAttribute("href")+"&forhash=1")
-					}
-		}
-
-        function loadFinished() {
-            document.doctitle = '';
-            window.docNum = parseInt('603002134', 10);
-            if (scrollTop > 0) {
-                window.scrollTo(0, scrollTop);
-            }
-            goToMark();
-            goToSelection();
-            setselchange();
-            IERecordSel();
-            changeFontOnLoad();
-            printOnLoad();
-            setLandscape();
-            if (textCompleted) {
-                hideSpinner();
-            }
-            FixImagesIE();
-        }
-
-        /*
-         Р•СЃР»Рё РїСЂРѕСЃРєСЂРѕР»РёР»Рё Р±РѕР»СЊС€Рµ РїРѕР»РѕРІРёРЅС‹ С‚РµРєСЃС‚Р°, РїСЂРѕРІРµСЂСЏРµРј РЅСѓР¶РЅРѕ Р»Рё Р·Р°РіСЂСѓР¶Р°С‚СЊ РІРµСЃСЊ С‚РµРєСЃС‚ С†РµР»РёРєРѕРј
-         */
-        var didScroll = false;
-        window.onscroll = doThisStuffOnScroll;
-        function doThisStuffOnScroll() {
-            didScroll = true;
-        }
-        var refreshScrollId = setInterval(function() {
-            if(!textCompleted && didScroll) {
-                didScroll = false;
-                var scroll, height;
-                if (document.documentElement.scrollTop) {
-                    scroll = document.documentElement.scrollTop;
-                    height = document.documentElement.scrollHeight;
-                } else {
-                    scroll = document.body.scrollTop;
-                    height = document.body.scrollHeight;
-                }
-                if (scroll > height*0.7) {
-                    clearInterval(refreshScrollId);
-                    loadFullText();
-                }
-            }
-        }, 1000);
-// РІ IE 11 РІСЃС‚СЂРѕРµРЅРЅС‹Р№ РјРµС…Р°РЅРёР·Рј СЂРµСЃР°Р№Р·Р° СЂР°Р±РѕС‚Р°РµС‚ РЅРµС…РѕСЂРѕС€Рѕ.
-        function FixImagesIE() {
-            if (!document.documentMode) return; // IE < 8 or not IE
-            if (navigator.userAgent.indexOf('MSIE') >= 0) return; // IE < 11
-            var images = document.querySelectorAll('img');
-            var tmpImages = [];
-            for (var i = 0; i < images.length; i++) {
-                var image = images[i];
-                var iW = images[i].naturalWidth;
-                var iH = images[i].naturalHeight;
-                var targetW = image.width;
-                var targetH = image.height;
-                if ((targetH * 2) > iH) continue; // РґРѕ РґРІСѓС…РєСЂР°С‚РЅРѕРіРѕ СѓРјРµРЅСЊС€РµРЅРёСЏ РѕР±РѕР№РґРµРјСЃСЏ РІСЃС‚СЂРѕРµРЅРЅС‹Рј СЂРµСЃР°Р№Р·РѕРј.
-                tmpImages[i] = new Image();
-                tmpImages[i].src = image.src;
-                tmpImages[i].setAttribute('iW', iW);
-                tmpImages[i].setAttribute('iH', iH);
-                tmpImages[i].setAttribute('targetW', targetW);
-                tmpImages[i].setAttribute('targetH', targetH);
-                tmpImages[i].setAttribute('num', i);
-                tmpImages[i].onload = function() {
-                    var iW = parseInt(this.getAttribute('iW')) / 2;
-                    var iH = parseInt(this.getAttribute('iH')) / 2;
-                    var targetW = parseInt(this.getAttribute('targetW'));
-                    var targetW = parseInt(this.getAttribute('targetH'));
-                    var num = parseInt(this.getAttribute('num'));
-                    iW = iW < targetW ? targetW : iW;
-                    iH = iH < targetH ? targetH : iH;
-                    this.setAttribute('iW', iW);
-                    this.setAttribute('iH', iH);
-                    var cnv = document.createElement('canvas');
-                    cnv.height = iH;
-                    cnv.width = iW;
-                    var ctx = cnv.getContext('2d');
-                    ctx.drawImage(this, 0, 0, iW, iH);
-                    var dataUrl = cnv.toDataURL();
-                    images[num].src = dataUrl;
-                    if (iW <= targetW || iH <= targetH) 
-                        return;
-                    this.src = dataUrl; // РЅРµСЏРІРЅР°СЏ СЂРµРєСѓСЂСЃРёСЏ
-                }
-            }
-        }
-
-
-    </script>
-</head>
-
-<body style="height:100%;" onload="loadFinished();" class="doc_content_bg_default">
-
-    
-
-    <div id="doc_content" class="t_normal" style="width: 750px;min-width: 710px;">
-
-        
-
-        <div id="text_content">
-            
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows-1251">
 <title>Complex</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:ValidateAgainstSchemas/><w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><w:IgnoreMixedContent>false</w:IgnoreMixedContent><w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><w:Compatibility><w:SelectEntireFieldWithStartOrEnd/><w:UseWord2002TableStyleRules/></w:Compatibility><w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel></w:WordDocument></xml><![endif]-->
 <style><!--
@@ -188,7 +45,6 @@ p.M{white-space:pre; overflow-wrap:normal; text-indent:0; max-width:4000px; text
 p.L{text-indent:0; text-align:left;}
 p.R{text-indent:0; text-align:right;}
 p.J{text-indent:0; text-align:justify;}
-p.F{text-indent:0; margin-left:45px; max-width:625px; text-align:left; background-color:#dcfeed; border-left: 5px solid #94DD96; padding-left: 5px;}
 .W0{vertical-align:baseline; font-size:100%; font-weight:normal; font-style:normal; text-decoration:none;}
 .W1{vertical-align:baseline; font-size:100%; font-weight:normal; font-style:normal; text-decoration:underline;}
 .W2{vertical-align:baseline; font-size:100%; font-weight:normal; font-style:italic; text-decoration:none;}
@@ -265,10 +121,9 @@ div.fragments{page:any;}
 @media screen{
 em{background-color:#f0f0f0; color:#1111ee;}
 span.ed,span.edx{color:#1111ee;}
-span.mark,span.markx{color:#1111ee; font-weight:normal; font-style:italic; text-decoration:none;}
+span.mark,span.markx{color:#1111ee; font-weight:normal; font-style:italic; text-decoration:none;} 
 span.edx{background-color:#f0f0f0;}
-span.markx{background-color:#f0f0f0;}
-.F span.mark, .F span.markx{background-color:transparent; color:inherit;}
+span.markx{background-color:#f0f0f0;} 
 .cmd, a{cursor:pointer; color:#1111ee; font-weight:normal; font-style:normal; text-decoration:underline;}
 .cmdx{background-color:#ead099;}
 .W8 .cmd, .W8 a{cursor:pointer; color:#1111ee; font-weight:normal; font-style:normal; text-decoration:underline;
@@ -295,7 +150,6 @@ p.S{text-indent:0; margin-left:auto; margin-right:0; max-width:40ex; text-align:
 p.C{text-indent:0; margin-left:5ex; margin-right:5ex; max-width:100%; text-align:center;}
 p.T{text-indent:0; margin-left:5ex; margin-right:5ex; max-width:100%; text-align:center; font-weight:bold;}
 p.M{white-space:pre; overflow-wrap:normal; text-indent:0; max-width:100%; text-align:left; font-size:12.5pt; font-family:"courier new", courier, monospace;}
-p.F{text-indent:0; margin-left:7ex; max-width:100%; text-align:left; border-left: 5pt solid #949494; padding-left: 5pt;}
 .mark,.markx{font-weight:normal; font-style:italic; text-decoration:none;}
 .cmd, a{font-weight:normal; font-style:normal; text-decoration:none;}
 .W8 .cmd, .W8 a{font-weight:normal; font-style:normal; text-decoration:none;
@@ -314,16 +168,8 @@ table{font-size:12pt;}
 p.M{font-size:11pt;}
 }
 --></style>
+</head>
+<body><p>&nbsp;</p><p>&nbsp;</p><p class=3D"T">УКАЗ</p><p>&nbsp;</p><p class=3D"T">ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ</p><p>&nbsp;</p><p class=3D"T">О Чрезвычайном и Полномочном После Российской Федерации в Объединенной Республике Танзании</p><p>&nbsp;</p><p>Назначить Аветисяна Андрея Левоновича Чрезвычайным и Полномочным Послом Российской Федерации в Объединенной Республике Танзании.</p><p>&nbsp;</p><p>&nbsp;</p><p class=3D"I">Президент Российской Федерации&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В.Путин</p><p>&nbsp;</p><p class=3D"I">Москва, Кремль</p><p class=3D"I">5&nbsp;апреля&nbsp;2022&nbsp;года</p><p class=3D"I">№&nbsp;187</p><p>&nbsp;</p></body>
+</html>
 
-<p>&nbsp;</p><p>&nbsp;</p><p class="T">Р РђРЎРџРћР РЇР–Р•РќРР•</p><p>&nbsp;</p><p class="T">РџР Р•Р—РР”Р•РќРўРђ Р РћРЎРЎРР™РЎРљРћР™ Р¤Р•Р”Р•Р РђР¦РР</p><p>&nbsp;</p><p>&nbsp;</p><p>РќР°Р·РЅР°С‡РёС‚СЊ Р·Р°РјРµСЃС‚РёС‚РµР»СЏ РњРёРЅРёСЃС‚СЂР° РёРЅРѕСЃС‚СЂР°РЅРЅС‹С… РґРµР» Р РѕСЃСЃРёР№СЃРєРѕР№ Р¤РµРґРµСЂР°С†РёРё РџР°РЅРєРёРЅР° РђР»РµРєСЃР°РЅРґСЂР° РђРЅР°С‚РѕР»СЊРµРІРёС‡Р° РѕС„РёС†РёР°Р»СЊРЅС‹Рј РїСЂРµРґСЃС‚Р°РІРёС‚РµР»РµРј РџСЂРµР·РёРґРµРЅС‚Р° Р РѕСЃСЃРёР№СЃРєРѕР№ Р¤РµРґРµСЂР°С†РёРё РїСЂРё СЂР°СЃСЃРјРѕС‚СЂРµРЅРёРё РїР°Р»Р°С‚Р°РјРё Р¤РµРґРµСЂР°Р»СЊРЅРѕРіРѕ РЎРѕР±СЂР°РЅРёСЏ Р РѕСЃСЃРёР№СЃРєРѕР№ Р¤РµРґРµСЂР°С†РёРё РІРѕРїСЂРѕСЃР° Рѕ СЂР°С‚РёС„РёРєР°С†РёРё РЎРѕРіР»Р°С€РµРЅРёСЏ РїРѕ РІРѕРїСЂРѕСЃР°Рј СЋСЂРёСЃРґРёРєС†РёРё Рё РѕРєР°Р·Р°РЅРёСЏ РїСЂР°РІРѕРІРѕР№ РїРѕРјРѕС‰Рё РїРѕ РґРµР»Р°Рј, СЃРІСЏР·Р°РЅРЅС‹Рј СЃ РІСЂРµРјРµРЅРЅС‹Рј РїСЂРµР±С‹РІР°РЅРёРµРј С„РѕСЂРјРёСЂРѕРІР°РЅРёР№ СЃРёР» Рё СЃСЂРµРґСЃС‚РІ СЃРёСЃС‚РµРјС‹ РєРѕР»Р»РµРєС‚РёРІРЅРѕР№ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё РЅР° С‚РµСЂСЂРёС‚РѕСЂРёСЏС… РіРѕСЃСѓРґР°СЂСЃС‚РІ&nbsp;- С‡Р»РµРЅРѕРІ РћСЂРіР°РЅРёР·Р°С†РёРё Р”РѕРіРѕРІРѕСЂР° Рѕ РєРѕР»Р»РµРєС‚РёРІРЅРѕР№ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё, РїРѕРґРїРёСЃР°РЅРЅРѕРіРѕ РІ Рі.&nbsp;Р”СѓС€Р°РЅР±Рµ 16&nbsp;СЃРµРЅС‚СЏР±СЂСЏ 2021&nbsp;Рі.</p><p>&nbsp;</p><p>&nbsp;</p><p class="I">РџСЂРµР·РёРґРµРЅС‚ Р РѕСЃСЃРёР№СЃРєРѕР№ Р¤РµРґРµСЂР°С†РёРё&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Р’.РџСѓС‚РёРЅ</p><p>&nbsp;</p><p class="I">25&nbsp;Р°РїСЂРµР»СЏ&nbsp;2022&nbsp;РіРѕРґР°</p><p class="I">в„–&nbsp;117-СЂРї</p><p>&nbsp;</p>
-
-
-        </div>
-
-        
-
-    </div>
-
-
-
-</body></html>
+------=_NextPart_01CAD650.0093E2A0--
