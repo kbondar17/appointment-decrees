@@ -24,7 +24,7 @@ def get_docs(gov_body: str = typer.Option(...),  date_type: str = typer.Option(.
     key_word - поисковое слово (назначить, премия, здравоохранение)
     filename - куда сохранить ссылки
     """
-    api = PravoInterface(gov_body=gov_body, date_type=date_type, date_from=date_from, date_to=date_to, key_word=key_word, doc_number=doc_number, filename=filename)
+    api = PravoInterface(gov_body=gov_body, date_type=date_type, date=date, date_from=date_from, date_to=date_to, key_word=key_word, doc_number=doc_number, filename=filename)
     api.get_docs()
 
 
