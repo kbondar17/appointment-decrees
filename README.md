@@ -13,7 +13,8 @@ Date-type может быть либо "Период" (тогда указыва
 
 Пример c периодом:
 ```
-python -m api get-docs --gov-body "Государственная Дума Федерального Собрания" --date-type Период --date-from 01.10.2021 --date-to 01.12.2021 --key-word назначить --filename='duma_links.txt'
+python -m api get-docs --gov-body "Государственная Дума Федерального Собрания" --date-type Период --date-from 01.10.2021 
+--date-to 01.12.2021 --key-word назначить --filename='duma_links.txt'
 ```
 
 Пример c точной датой:
