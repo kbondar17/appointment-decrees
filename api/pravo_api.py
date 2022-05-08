@@ -1,3 +1,4 @@
+import calendar
 import math
 import re
 import time
@@ -20,8 +21,10 @@ class PravoInterface:
         self.gov_body = gov_body[:-1]
         self.date_type = date_type
         self.date = date
-        self.date_from = date_from
-        self.date_to = date_to
+
+        self.date_from = {'year':date_from.split('.')[-1], 'month':str(int(date_from.split('.')[1])-1)}
+        self.date_to = {'year':date_to.split('.')[-1], 'month':str(int(date_to.split('.')[1])-1)}
+        
         self.doc_number = doc_number
         self.key_word = key_word    
         self.filename = filename
@@ -32,7 +35,7 @@ class PravoInterface:
     def paste_data(self):
 
         driver.get(SEARCH_URL)
-
+        
         who_box = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.ID, "a6label")))
         who_box.click()
         who_box.send_keys(self.gov_body)
@@ -57,17 +60,42 @@ class PravoInterface:
             select_date = Select(select_date)
             select_date.select_by_visible_text('Период')
 
-            from_date = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.NAME, "a7from")))
-            from_date.click()
-            from_date.send_keys(self.date_from)
+            driver.find_element(by=By.ID, value='img_a7_from').click() 
 
+            # set from date
+            from_year = driver.find_element(by=By.ID, value='a7dropdown_calendar1year_choice') 
+            Select(from_year).select_by_value(self.date_from['year'])
+
+            from_month = driver.find_element(by=By.ID, value='a7dropdown_calendar1month_choice') 
+            Select(from_month).select_by_value(self.date_from['month'])
+            
+            from_calendar = driver.find_element(by=By.ID, value='a7dropdown_calendar1calendar_days') 
+            calendar_rows = from_calendar.find_elements(by=By.TAG_NAME, value='tr')[:2]
+            
+            calendar_days = sum([row.find_elements(by=By.TAG_NAME, value='span') for row in calendar_rows], [])
+            first_day_button = [e for e in calendar_days if e.text == '1'][0] 
+            first_day_button.click()
+                
+
+            # set to date
+            driver.find_element(by=By.ID, value='img_a7_to').click() 
+
+            to_year = driver.find_element(by=By.ID, value='a7dropdown_calendar2year_choice') 
+            Select(to_year).select_by_value(self.date_to['year'])
+
+            to_month = driver.find_element(by=By.ID, value='a7dropdown_calendar2month_choice') 
+            Select(to_month).select_by_value(self.date_to['month'])
+
+            to_calendar = driver.find_element(by=By.ID, value='a7dropdown_calendar2calendar_days') 
+            calendar_rows = to_calendar.find_elements(by=By.TAG_NAME, value='tr')[-2:]
+            
+            calendar_days = sum([row.find_elements(by=By.TAG_NAME, value='span') for row in calendar_rows], [])
+
+            month_last_day = str(calendar.monthrange(int(self.date_from['year']), int(self.date_from['month']))[-1]) 
+            last_day_button = [e for e in calendar_days if e.text == month_last_day][0] 
+            last_day_button.click()
             time.sleep(self.timeout)
 
-            to_date = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.NAME, "a7to")))
-            to_date.click()
-            to_date.send_keys(self.date_to)
-
-            time.sleep(self.timeout)
 
         if self.key_word:
             key_word_field = driver.find_element_by_css_selector('textarea[name="a0"]')
@@ -93,6 +121,7 @@ class PravoInterface:
 
     def get_pages_to_parse(self) ->list[str]:
         """составляем ссылки на страницы с документами (имитация пагинации)"""
+        time.sleep(3)
         driver.switch_to.frame('topmenu') 
 
         # ссылка шаблон с заполненным query, куда можно подставлять offset
@@ -100,6 +129,7 @@ class PravoInterface:
 
         # рабочая ссылка на одну из страниц с пагинацией  
         pagination_link = pagination_el.find_element(by=By.TAG_NAME, value='a').get_attribute('href')
+        
         total_docs_path = '//*[@id="search_results_format"]/table/tbody/tr/td[1]/span/span'
         total_docs = driver.find_element(by=By.XPATH, value=total_docs_path).text
         total_docs = int(total_docs)
