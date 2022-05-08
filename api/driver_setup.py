@@ -17,9 +17,6 @@ chrome_options.add_experimental_option('useAutomationExtension', False)
 window_sizes = ['1280,800', '1650,900', '2100,1115', '1330,650'], 
 chrome_options.add_argument(f"window-size={choice(window_sizes)}")
 
-#TODO: перенести в .env
-# chrome_path = r"C:\Users\ironb\прогр\program_files\chromedriver_copy\chromedriver.exe"
-
 chrome_path = config['chrome_path']
 
 driver = webdriver.Chrome(executable_path=chrome_path, chrome_options=chrome_options)
