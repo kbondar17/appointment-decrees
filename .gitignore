@@ -11,6 +11,7 @@ api/downloader.py
 *.txt
 !requirements.txt
 downloads/
+pyenv.cfg
 
 # C extensions
 *.so
