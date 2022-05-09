@@ -21,16 +21,20 @@ class PravoInterface:
         self.gov_body = gov_body[:-1]
         self.date_type = date_type
         self.date = date
-
-        self.date_from = {'year':date_from.split('.')[-1], 'month':str(int(date_from.split('.')[1])-1)}
-        self.date_to = {'year':date_to.split('.')[-1], 'month':str(int(date_to.split('.')[1])-1)}
+        
+        self.date_from = self._date_parser(date_from)
+        self.date_to = self._date_parser(date_to)
         
         self.doc_number = doc_number
         self.key_word = key_word    
         self.filename = filename
 
-        self.timeout = 0.4
+        self.timeout = 0.4 
 
+    def _date_parser(self, date:str)->dict[str, str]:
+        year, month = date.split('.')[-1], date.split('.')[-2]
+        month = month.replace('0','') 
+        return {'year':year, 'month':month}
 
     def paste_data(self):
 
@@ -39,7 +43,7 @@ class PravoInterface:
         who_box = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.ID, "a6label")))
         who_box.click()
         who_box.send_keys(self.gov_body)
-        apearing_hint = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.CLASS_NAME, "yui-ac-highlight"))) 
+        apearing_hint = WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.CLASS_NAME, "yui-ac-highlight"))) 
         apearing_hint.click() 
 
         time.sleep(self.timeout)
@@ -67,7 +71,7 @@ class PravoInterface:
             Select(from_year).select_by_value(self.date_from['year'])
 
             from_month = driver.find_element(by=By.ID, value='a7dropdown_calendar1month_choice') 
-            Select(from_month).select_by_value(self.date_from['month'])
+            Select(from_month).select_by_value(str(int(self.date_from['month'])-1))
             
             from_calendar = driver.find_element(by=By.ID, value='a7dropdown_calendar1calendar_days') 
             calendar_rows = from_calendar.find_elements(by=By.TAG_NAME, value='tr')[:2]
@@ -79,12 +83,15 @@ class PravoInterface:
 
             # set to date
             driver.find_element(by=By.ID, value='img_a7_to').click() 
+            # select_date = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.ID, "a7type")))
 
-            to_year = driver.find_element(by=By.ID, value='a7dropdown_calendar2year_choice') 
-            Select(to_year).select_by_value(self.date_to['year'])
+
+            # to_year = driver.find_element(by=By.ID, value='a7dropdown_calendar2year_choice') 
+            select_to_year = WebDriverWait(driver, 3.5).until(EC.element_to_be_clickable((By.ID, "a7dropdown_calendar2year_choice")))
+            Select(select_to_year).select_by_value(self.date_to['year'])
 
             to_month = driver.find_element(by=By.ID, value='a7dropdown_calendar2month_choice') 
-            Select(to_month).select_by_value(self.date_to['month'])
+            Select(to_month).select_by_value(str(int(self.date_to['month'])-1))
 
             to_calendar = driver.find_element(by=By.ID, value='a7dropdown_calendar2calendar_days') 
             calendar_rows = to_calendar.find_elements(by=By.TAG_NAME, value='tr')[-2:]
@@ -92,6 +99,7 @@ class PravoInterface:
             calendar_days = sum([row.find_elements(by=By.TAG_NAME, value='span') for row in calendar_rows], [])
 
             month_last_day = str(calendar.monthrange(int(self.date_from['year']), int(self.date_from['month']))[-1]) 
+
             last_day_button = [e for e in calendar_days if e.text == month_last_day][0] 
             last_day_button.click()
             time.sleep(self.timeout)

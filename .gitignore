@@ -8,6 +8,15 @@ api/temp.py
 api/temp_temp.py
 api/aa.py
 api/downloader.py
+api/converter.py
+
+api/go_pavlov.py
+
+bin/
+include/
+script/
+Lib/
+
 *.txt
 !requirements.txt
 downloads/
