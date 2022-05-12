@@ -70,23 +70,26 @@ class TempApi:
         
         return all_docs_links
 
-    def get(self, url, filename)->list[str]:
+    def get(self, url, filename='')->list[str]:
         driver.get(url)
 
         pages_to_parse = self.get_pages_to_parse()
         docs_links = []
         for page in pages_to_parse:
             docs_links.append(self.get_page_docs(page))
-            
 
+        docs_links = [item for sublist in docs_links for item in sublist]
         if filename:
-            docs_links = [item for sublist in docs_links for item in sublist]
             with open(filename, 'w') as f:
                 f.write('\n'.join(docs_links))
                 print(f'Сохранено {len(docs_links)} ссылок на документы')                
+        
+        return docs_links
 
-url = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=r015000%2Fv7701%2Fv7702%2Fv9101%2Fv9400&v3=&v3type=1&v3value=&v6=&v6type=1&v6value=&a7type=3&a7from=&a7to=&a7date=01.05.2010&a8=&a8type=1&a1=&a0=%ED%E0%E7%ED%E0%F7%E8%F2%FC&v4=&v4type=1&v4value=&textpres=&sort=7&virtual=1&x=59&y=14'
-file = 'downloads/links/mos_oblast.txt'
+if __name__ =='__main__':    
+    url = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=r015000%2Fv7701%2Fv7702%2Fv9101%2Fv9400&v3=&v3type=1&v3value=&v6=&v6type=1&v6value=&a7type=3&a7from=&a7to=&a7date=01.05.2010&a8=&a8type=1&a1=&a0=%ED%E0%E7%ED%E0%F7%E8%F2%FC&v4=&v4type=1&v4value=&textpres=&sort=7&virtual=1&x=59&y=14'
+    url = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=r062200&a3=&a3type=1&a3value=&a6=&a6type=1&a6value=&a15=&a15type=1&a15value=&a7type=3&a7from=&a7to=&a7date=01.01.2000&a8=&a8type=1&a1=&a0=%ED%E0%E7%ED%E0%F7%E8%F2%FC&a16=&a16type=1&a16value=&a17=&a17type=1&a17value=&a4=&a4type=1&a4value=&a23=&a23type=1&a23value=&textpres=&sort=7&x=77&y=5'
+    file = 'downloads/links/алтайский_край.txt'
 
-parser = TempApi()
-parser.get(url, file)
+    parser = TempApi()
+    parser.get(url, file)

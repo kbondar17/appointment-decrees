@@ -9,8 +9,8 @@ api/temp_temp.py
 api/aa.py
 api/downloader.py
 api/converter.py
-
 api/go_pavlov.py
+*.pkl
 
 bin/
 include/

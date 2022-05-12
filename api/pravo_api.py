@@ -183,9 +183,11 @@ class PravoInterface:
     
         if self.filename:
             docs_links = [item for sublist in docs_links for item in sublist]
+    
             with open(self.filename, 'w') as f:
                 f.write('\n'.join(docs_links))
                 print(f'Сохранено {len(docs_links)} ссылок на документы')                
+    
         return docs_links
 
 
