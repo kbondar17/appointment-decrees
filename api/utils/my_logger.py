@@ -4,11 +4,34 @@ from typing import Any
 from functools import wraps
 
 # from api.config import loggin_level
-loggin_level = 'ERROR'
+loggin_level = 'INFO'
+
 def create_logger(name):
     logging.basicConfig(format='LOGGER::%(name)s.%(funcName)s::%(levelname)s::%(message)s|')
     logger = logging.getLogger(name)
     logger.setLevel(loggin_level) 
+    return logger
+
+    
+
+
+def get_file_logger(name):
+    # Create a custom logger
+    logger = logging.getLogger(name)
+
+    # Create handlers
+    # c_handler = logging.StreamHandler()
+    # c_handler.setLevel(logging.WARNING)
+
+    f_handler = logging.FileHandler('my_logs.log')
+
+    my_format = 'LOGGER::%(name)s.%(funcName)s(line %(lineno)d)::%(levelname)s::%(message)s |'
+    f_format = logging.Formatter(my_format)
+    f_handler.setFormatter(f_format)
+
+    f_handler.setLevel(logging.INFO)
+    logger.addHandler(f_handler)
+
     return logger
 
 
@@ -32,10 +55,12 @@ class Log:
         return wrapper
 
 
+
 @Log(__name__)
 def my_fun(x, *args, **kwargs):
     print('locals -- ', locals())
     print('args in my fun::',x)
     return 'my_fun result'
+
 
 # my_fun('my arg')

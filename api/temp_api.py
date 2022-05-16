@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from api.driver_setup import driver
+from api.utils.my_logger import Log
 
 
 class TempApi:
@@ -70,20 +71,17 @@ class TempApi:
         
         return all_docs_links
 
-    def get(self, url, filename='')->list[str]:
+    @Log(__name__)
+    def get(self, url)->list[str]:
+        """url - ссылка на поисковую    выборку"""
         driver.get(url)
 
         pages_to_parse = self.get_pages_to_parse()
         docs_links = []
         for page in pages_to_parse:
-            docs_links.append(self.get_page_docs(page))
+            docs_links.extend(self.get_page_docs(page))
 
-        docs_links = [item for sublist in docs_links for item in sublist]
-        if filename:
-            with open(filename, 'w') as f:
-                f.write('\n'.join(docs_links))
-                print(f'Сохранено {len(docs_links)} ссылок на документы')                
-        
+        driver.close()
         return docs_links
 
 if __name__ =='__main__':    
@@ -92,4 +90,4 @@ if __name__ =='__main__':
     file = 'downloads/links/алтайский_край.txt'
 
     parser = TempApi()
-    parser.get(url, file)
+    parser.get(url)

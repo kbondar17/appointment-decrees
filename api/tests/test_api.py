@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning) 
+
 import unittest
 from api.converter import MyParser
 
@@ -5,7 +8,7 @@ from api.converter import MyParser
 stop_words = 'api/unwanted_words.txt'
 my_parser = MyParser(location='алтайского края', unwanted_words=stop_words)
 test_folder = 'api/tests/test_data'
-
+ 
 
 class TestApi(unittest.TestCase): 
     

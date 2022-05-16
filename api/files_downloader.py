@@ -1,44 +1,34 @@
-import aiohttp
-import asyncio
-from api.main import DataHandler
+import imp
+import requests 
+import os
+import re
+import time
+from random import uniform
+from pathlib import Path
 
 class FilesDownloader:
-
-    def __init__(self, destination_folder:str, meta_data_handler:DataHandler) -> None:
-        """принимает ссылки на доки"""
-        self.destination_folder = destination_folder
-        self.downloaded = 0
+    def __init__(self, result_folder) -> None:
+        self.result_folder = Path(result_folder)
         self.results = []
-        self.meta_data_handler = meta_data_handler
-        self.files_n_links = []
 
-    async def download(self, url):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
-                try:
-                    response
-                    # TODO: wait for responce
-                    # response.
-                    print('SAVE FILES')
-                    filename = ''
-                    
-                    print('downloaded ---', f'{self.downloaded}/{self.links}' )
-                    self.results.append('ok')
-                    self.files_n_links.append({'filename':filename, 'link':url})
-                    # self.meta_data_handler({'filename':filename,'link':url})  
+    def get(self, links:list):
+        for link in links:
+            r = requests.get(link, timeout=(3, 60))
+            if not r.ok:
+                print('ошибка')
+                print(link)
+                print(r.status_code)
+                self.results.append('ошибка запроса')
+                continue
 
+            content = r.content.decode('cp1251')
+            if not 'назначить' in content and not 'Назначить' in content:
+                self.results.append('нет назначить')
+                continue
+            
+            filename = re.findall("filename=(.+)", r.headers['Content-Disposition'])[0]
 
-                except Exception as ex:
-                    print(ex.with_traceback)
-                    self.results.append(ex.args[0])
-
-    async def gather(self, links):
-        await asyncio.gather(*[self.download(link) for link in links])
-
-
-    def get(self, links:list[str]):
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.gather(links))
-        self.meta_data_handler.save_links_n_filenames(self.files_n_links)
-
-
+            with open(self.result_folder / filename, 'wb') as f:
+                self.results.append('сохранено')            
+                f.write(r.content) 
+                time.sleep(uniform(a=0.3,b=1.5))
