@@ -7,12 +7,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
-from api.driver_setup import driver
+from api.driver_setup import get_driver
 from api.utils.my_logger import Log
 
 
 class TempApi:
 
+    def __init__(self) -> None:
+        self.driver = get_driver()
 
     @staticmethod
     def _paginate_pages_of_docs(url:str, offset):
@@ -28,16 +30,16 @@ class TempApi:
     def get_pages_to_parse(self) ->list[str]:
         """составляем ссылки на страницы с документами (имитация пагинации)"""
         time.sleep(3)
-        driver.switch_to.frame('topmenu') 
+        self.driver.switch_to.frame('topmenu') 
 
         # ссылка шаблон с заполненным query, куда можно подставлять offset
-        pagination_el = driver.find_elements(by=By.CLASS_NAME, value='pager')[-1] 
+        pagination_el = self.driver.find_elements(by=By.CLASS_NAME, value='pager')[-1] 
 
         # рабочая ссылка на одну из страниц с пагинацией  
         pagination_link = pagination_el.find_element(by=By.TAG_NAME, value='a').get_attribute('href')
         
         total_docs_path = '//*[@id="search_results_format"]/table/tbody/tr/td[1]/span/span'
-        total_docs = driver.find_element(by=By.XPATH, value=total_docs_path).text
+        total_docs = self.driver.find_element(by=By.XPATH, value=total_docs_path).text
         total_docs = int(total_docs)
 
         def roundup(x): return int(math.ceil(x / 100.0)) 
@@ -55,12 +57,12 @@ class TempApi:
     def get_page_docs(self, page_path:str)->list[str]:        
         """вытащить все ссылки на документы со страницы"""
 
-        driver.get(page_path)
+        self.driver.get(page_path)
         frame_selector = 'td.list'
-        WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.CSS_SELECTOR, frame_selector)))
+        WebDriverWait(self.driver, 4).until(EC.element_to_be_clickable((By.CSS_SELECTOR, frame_selector)))
         
-        driver.switch_to.frame('list') 
-        docs = driver.find_elements(by=By.CLASS_NAME, value='l_pics')
+        self.driver.switch_to.frame('list') 
+        docs = self.driver.find_elements(by=By.CLASS_NAME, value='l_pics')
 
         docs_hrefs = [e.find_element_by_tag_name('a').get_attribute('href') for e in docs]
         docs_hrefs = ['&'.join(href.split('/')[-1].split("&")[1:-1]) for href in docs_hrefs]
@@ -74,14 +76,14 @@ class TempApi:
     @Log(__name__)
     def get(self, url)->list[str]:
         """url - ссылка на поисковую    выборку"""
-        driver.get(url)
+        self.driver.get(url)
 
         pages_to_parse = self.get_pages_to_parse()
         docs_links = []
         for page in pages_to_parse:
             docs_links.extend(self.get_page_docs(page))
 
-        driver.close()
+        self.driver.close()
         return docs_links
 
 if __name__ =='__main__':    

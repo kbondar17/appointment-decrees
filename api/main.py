@@ -5,6 +5,7 @@
 import os 
 from collections import Counter 
  
+from transliterate import translit
 from api.temp_api import TempApi    
 # from api.converter import MyParser
 from api.new_converter import MyParser
@@ -47,7 +48,7 @@ class DecreeWorker:
                 parsing_results.append(parsed_file)
                 results.append('ok')
             except Exception as ex:
-                results.append(ex)
+                results.append(str(ex))
                 # import traceback
                 # traceback.print_exc()
                 # print('===ОШИБКА===') # TODO: вынести это в декоратор
@@ -56,7 +57,7 @@ class DecreeWorker:
                 # print('====')
         
         filelogger.warning('Результаты парсинга {}'.format(str(Counter(results))))
-        print('PARSIN RESULTS in MAIN:::',Counter(results))
+        # print('PARSIN RESULTS in MAIN:::',Counter(results))
         return parsing_results        
         
     def go(self):
@@ -87,17 +88,20 @@ if __name__ == '__main__':
     # worker = DecreeWorker(entity_name, link, links_file_exists=False, parse_only=False)
     # worker.go()
     import ast
+    already_proccessed_regions = os.listdir(r'C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions')
     regs_n_links = open('regions_n_links.txt', 'r').read()
     regs_n_links = ast.literal_eval(regs_n_links)
-
+    i=0
     for region, link in regs_n_links.items():
-        print(region, link)
+        if region in already_proccessed_regions:
+            continue
+        filelogger.warning('PARSING REGION:: {} VIA LINK {}'.format(translit(region, 'ru', reversed=True), link))
         worker = DecreeWorker(entity_name=region, search_link=link, unwanted_words=unwanted_words, 
-                              links_file_exists=True, parse_only=False)
+                              links_file_exists=False, parse_only=False)
         worker.go()
-        break
-
-
+        i+=1
+        if i > 5:
+            break 
 
 
     #TODO: мб files downloader может наследоваться от data handler. было бы логично 

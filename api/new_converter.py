@@ -1,6 +1,7 @@
-from turtle import pos
 import typing
 import warnings
+
+from matplotlib.pyplot import text
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 import typing
@@ -17,10 +18,8 @@ from natasha import (
     NewsMorphTagger,
     NewsSyntaxParser,
     NewsNERTagger,
-    
-    PER,
     NamesExtractor,
-
+    PER,
     Doc
 ) 
 
@@ -46,7 +45,7 @@ names_extractor = NamesExtractor(morph_vocab)
 class MyParser:
     """берет файл, находит строчку с назначением и должностью, сохраняет в папку results"""
 
-    def __init__(self, data_hanlder, unwanted_words:str='api/unwanted_words.txt', location=''):
+    def __init__(self, data_hanlder='', unwanted_words:str='api/unwanted_words.txt', location=''):
         self.unwanted_words = open(unwanted_words, 'r', encoding='utf-8').read().split('\n')
         self.file_data_class = FileData
         self.file_data = ''
@@ -63,14 +62,19 @@ class MyParser:
             raw_text = f.read()
 
         if 'Назначить' not in raw_text and 'назначить' not in raw_text:
-            raise ValueError('нет назначить')
+            raise ValueError('no appoitments found')
 
         soup = BeautifulSoup(raw_text, 'html.parser')        
+
         tags = soup.find_all(['p','h1','h2','h3','span'])
         raw_text = [e.text for e in tags if e.text != '\xa0']
         raw_text = set(raw_text)
         raw_text = [e.replace('\xa0',' ') for e in raw_text]
         self.file_data.text_raw = raw_text #'\n'.join(raw_text)
+        
+        # если надо вытащить все тэги 
+        # raw_text = [tag.text for tag in soup.findAll(recursive=False)] 
+
         
     def get_appointment_lines(self)->None:
         appointment_lines = [e for e in self.file_data.text_raw if 'Назначить' in e or 'назначить' in e]
@@ -93,7 +97,7 @@ class MyParser:
             span.normalize(morph_vocab)
 
         names = []
-        #TODO: тут можно подумать, что делать, если несколько имены
+        #TODO: тут можно подумать, что делать, если несколько имен
         for span in doc.spans:
             if span.type == PER:
                 span.extract_fact(names_extractor)
@@ -109,7 +113,7 @@ class MyParser:
                 line['names'] = name
                 names_located = True
         if not names_located:  
-            raise ValueError('нет имен')
+            raise ValueError('no names found')
 
     def remove_unwanted_words(self, line:str)->str:
         line = line.lower()
@@ -152,7 +156,7 @@ class MyParser:
             position_exists_in_file = True
         
         if not position_exists_in_file:
-            raise ValueError('неподходящая должность')
+            raise ValueError('position is in stop words')
     
     def add_url_info(self):
         file_name = self.file_data.file_name
@@ -184,7 +188,8 @@ class MyParser:
 
 if __name__ == '__main__':
     f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\ивановская область\raw_files\-1--21_01_2002.rtf"
+    f = r"C:\Users\ironb\Downloads\П-103-26_04_2016.rtf"
     parser = MyParser()
-
+    from pprint import pprint
     # parser.parse_file(f)
-    print(parser.parse_file(f))
+    pprint(parser.parse_file(f))

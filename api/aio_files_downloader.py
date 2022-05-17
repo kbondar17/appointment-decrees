@@ -1,6 +1,7 @@
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+from collections import Counter
 from random import uniform
 import aiohttp
 import asyncio
@@ -23,7 +24,7 @@ class FilesDownloader:
         self.timeout = aiohttp.ClientTimeout(400)
         # для проверки результатов
         self.results: list[str] = []
-        self.files_n_links: list[dict[str, str]] = []
+        # self.files_n_links: list[dict[str, str]] = []
         self.count = 0
         self.data_hanlder = data_hanlder
         self.processed_links = []        
@@ -42,20 +43,16 @@ class FilesDownloader:
                     raise ValueError('нет назначить')
 
                 filename = headers['Content-Disposition'].split('filename=')[-1].encode('utf-8', errors='ignore').decode('utf-8') 
-
+                
+                #сохраняем ссылки в память, чтобы потом вставить в json на выход 
                 self.data_hanlder.add_files_n_links({filename:url})
 
                 # сохраняем файл
                 with open(self.result_folder / filename, 'wb') as f:
                     f.write(content)
-                    self.results.append('ok')
+                    self.results.append('ok')   
                 
-                #сохраняем {имя_файла:ссылка}
-                with open(self.files_n_links_file, 'a') as f:
-                    line = str({"filename":filename, "link":url})
-                    f.write(f'{line}\n')
-
-                # time.sleep(uniform(0.3, 1.5))
+                time.sleep(uniform(0.2, 0.6))
                 # await asyncio.sleep(uniform(0.3, 1.5))
                 self.processed_links.append(url)
                 self.count += 1
@@ -68,12 +65,7 @@ class FilesDownloader:
                 # await asyncio.sleep(uniform(0.3, 1.5))
                 self.count += 1
                 print(f'{self.count}/{self.total}')
-                # import traceback
-                # print('=== ERROR ===')
-                # print(url)
-                # print(traceback.print_exc())
-                # print('================')
-                self.results.append(ex)
+                self.results.append(str(ex))
 
     async def fetch_all(self, urls, loop):
         self.total = len(urls)
@@ -81,23 +73,35 @@ class FilesDownloader:
             res = await asyncio.gather(*[self.fetch(session, url) for url in urls], return_exceptions=True)
             return res
 
-    def go(self) -> list[dict[str,str]]:
-
-        from collections import Counter
+    def go(self)->None:
 
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.fetch_all(urls=self.links, loop=loop))
 
         not_processed = set(self.links).difference(set(self.processed_links))
-
-        filelogger.warning('было ссылок на файлы {}. Из них скачали {}'.format(len(self.links), len(self.files_n_links) ))
-        filelogger.warning('НЕ ОБРАБОТАЛИ ЭТИ ФАЙЛЫ {}'.format(not_processed))
-        filelogger.warning(str(Counter(self.results)))
+        filelogger.warning('THEESE FILES ({}) ARE NOT PROCESSED AFTER ! FIRST ! ATTEMPT {}'.format(len(not_processed), not_processed))
         
-        print('===== РЕЗУЛЬТАТЫ скачивания ==== ', )
-        print(Counter(self.results))
-        print('======'*2)
-        return self.files_n_links
+        self.count = 0
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(self.fetch_all(urls=not_processed, loop=loop))
+        
+        not_processed = set(self.links).difference(set(self.processed_links))
+        filelogger.warning('THEESE FILES ({}) ARE NOT PROCESSED AFTER ! SECOND ! ATTEMPT  {}'.format(len(not_processed), not_processed))
+
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(self.fetch_all(urls=not_processed, loop=loop))
+        
+        not_processed = set(self.links).difference(set(self.processed_links))
+        filelogger.warning('THEESE FILES ({}) ARE NOT PROCESSED AFTER !! THIRD !! ATTEMPT  {}'.format(len(not_processed), not_processed))
+
+        filelogger.warning('TOTAL NUMBER OF FILE LINKS {}. SUCCESSFULLY DOWNLOADED {}'.format(len(self.links), len(self.processed_links)))
+        filelogger.warning(str(Counter(self.results)))
+
+        self.data_hanlder.save_files_n_links()
+
+
 
 # def download_files(links:list[str], result_folder:str|Path, files_n_links_file:str|Path):
 

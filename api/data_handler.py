@@ -18,6 +18,11 @@ class DataHandler:
     def add_files_n_links(self, file_n_link:dict):
         self.files_n_links.update(file_n_link)
 
+    def save_files_n_links(self):
+        #сохраняем {имя_файла:ссылка}
+        with open(self.files_n_links_file, 'w') as f:
+            f.write(str(self.files_n_links))
+
     def save_results_json(self, data:list[FileData]):
         filepath = str(self.results_folder) + self.region_name +  '_parsed.json'
         data = {'parsed_data':[e.dict() for e in data]}

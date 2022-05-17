@@ -28,5 +28,3 @@ def get_file_logger(name):
 # logger = get_file_logger('my_logger')
 # logger.error('aaa')
 
-import sys
-print(sys.stdout)
