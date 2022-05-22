@@ -18,9 +18,9 @@ date='21-01-2002', text_raw=['\n\n', '      Глава администраци�
 
 
 class AppoitmentLine(BaseModel):
-    raw_line: str = None
+    raw_line: str|None = None
     names: list[dict[str, str]] = []
-    position: str = None
+    position: str|None = None
    
 
 class FileData(BaseModel):

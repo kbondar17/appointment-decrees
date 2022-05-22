@@ -7,7 +7,7 @@ from functools import wraps
 loggin_level = 'INFO'
 
 def create_logger(name):
-    logging.basicConfig(format='LOGGER::%(name)s.%(funcName)s::%(levelname)s::%(message)s|')
+    logging.basicConfig(format='LOGGER::%(asctime)s::%(name)s.%(funcName)s::%(levelname)s::%(message)s|')
     logger = logging.getLogger(name)
     logger.setLevel(loggin_level) 
     return logger

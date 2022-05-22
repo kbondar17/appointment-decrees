@@ -58,6 +58,7 @@ class TempApi:
         """вытащить все ссылки на документы со страницы"""
 
         self.driver.get(page_path)
+
         frame_selector = 'td.list'
         WebDriverWait(self.driver, 4).until(EC.element_to_be_clickable((By.CSS_SELECTOR, frame_selector)))
         
@@ -75,7 +76,7 @@ class TempApi:
 
     @Log(__name__)
     def get(self, url)->list[str]:
-        """url - ссылка на поисковую    выборку"""
+        """url - ссылка на поисковую выборку"""
         self.driver.get(url)
 
         pages_to_parse = self.get_pages_to_parse()

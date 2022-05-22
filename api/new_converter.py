@@ -1,7 +1,6 @@
 import typing
 import warnings
 
-from matplotlib.pyplot import text
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 import typing
@@ -43,14 +42,15 @@ names_extractor = NamesExtractor(morph_vocab)
 
 
 class MyParser:
-    """берет файл, находит строчку с назначением и должностью, сохраняет в папку results"""
+    """берет файл, находит строчку с назначением и должностью"""
 
-    def __init__(self, data_hanlder='', unwanted_words:str='api/unwanted_words.txt', location=''):
+    def __init__(self, data_hanlder='', unwanted_words:str='api/unwanted_words.txt', location='', word_to_search:str='назначить'):
         self.unwanted_words = open(unwanted_words, 'r', encoding='utf-8').read().split('\n')
         self.file_data_class = FileData
-        self.file_data = ''
+        self.file_data:FileData 
         self.data_hanlder = data_hanlder
         self.location = location
+        self.word_to_search = word_to_search
 
     def get_file_info(self, file_path:str)->dict[str,str]:
         file_name = Path(file_path).name
@@ -61,8 +61,8 @@ class MyParser:
         with open(self.file_data.file_path) as f:
             raw_text = f.read()
 
-        if 'Назначить' not in raw_text and 'назначить' not in raw_text:
-            raise ValueError('no appoitments found')
+        if not self.word_to_search.lower() in raw_text and not self.word_to_search.capitalize() in raw_text:
+            raise ValueError('search word not found')
 
         soup = BeautifulSoup(raw_text, 'html.parser')        
 
@@ -77,13 +77,16 @@ class MyParser:
 
         
     def get_appointment_lines(self)->None:
-        appointment_lines = [e for e in self.file_data.text_raw if 'Назначить' in e or 'назначить' in e]
+        # фльтруем по поисковому слову
+        appointment_lines = [e for e in self.file_data.text_raw if self.word_to_search.lower() in e 
+                            or self.word_to_search.upper() in e]
+        
         for line in appointment_lines:
             self.file_data.appointment_lines.append({
                 'raw_line':line
             })
 
-    def _locate_names_in_string(self, text, *args, **kwargs)->list[Doc]:
+    def _locate_names_in_string(self, text, *args, **kwargs)->list[dict[str,str]]:
         """находит в строке имена, возвращает их индексы"""
         doc = Doc(text)
         doc.segment(segmenter) 
@@ -97,12 +100,23 @@ class MyParser:
             span.normalize(morph_vocab)
 
         names = []
-        #TODO: тут можно подумать, что делать, если несколько имен
         for span in doc.spans:
             if span.type == PER:
                 span.extract_fact(names_extractor)
-                names.append({'name_raw':span.text,'name_norm':span.normal})
+                names.append(span)
+
+        # конкатинируем, если фамилия и имя отдельно
+        if len(names) == 2:
+            if len(names[1].fact.as_dict) + len(names[0].fact.as_dict) == 3:
+                concated_name_norm = names[0].normal + ' ' + names[1].normal 
+                concated_name_norm = ' '.join(concated_name_norm.split())
+                concated_name_raw = names[0].text + ' ' + names[1].text 
+                concated_name_raw = ' '.join(concated_name_raw.split())
+                names = [{'name_raw':concated_name_raw, 'name_norm':concated_name_raw}]
+        else:
+            names = [{'name_raw':' '.join(span.text.split()),'name_norm':' '.join(span.normal.split())} for span in names]
         return names
+
 
     def find_names_in_line(self)->None:
         """при нахождении имен добавляет в {'name'} """    
@@ -142,13 +156,14 @@ class MyParser:
 
         for line in self.file_data.appointment_lines:
             position = line['raw_line']
+            position = ' '.join(position.split())
             for name in line['names']:
                 position = position.replace(name['name_raw'],'')
 
             position = position.lower()
             if self.check_for_stop_words(position):
                 continue
-            position = ' '.join(position.split())
+
             position = position.split('освободив')[0]
             position = position.split('в порядке перевода')[0]
             position = self.remove_unwanted_words(position)    
@@ -156,7 +171,7 @@ class MyParser:
             position_exists_in_file = True
         
         if not position_exists_in_file:
-            raise ValueError('position is in stop words')
+            raise ValueError('No position, or position is in stop words')
     
     def add_url_info(self):
         file_name = self.file_data.file_name
@@ -189,6 +204,7 @@ class MyParser:
 if __name__ == '__main__':
     f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\ивановская область\raw_files\-1--21_01_2002.rtf"
     f = r"C:\Users\ironb\Downloads\П-103-26_04_2016.rtf"
+    f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\Ивановской области\raw_files\-10--13_01_2006.rtf"
     parser = MyParser()
     from pprint import pprint
     # parser.parse_file(f)

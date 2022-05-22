@@ -2,6 +2,7 @@
 Инкапсуляция. 
 '''
 
+import json
 import os 
 from collections import Counter 
  
@@ -19,16 +20,18 @@ filelogger = get_file_logger(__name__)
 
 class DecreeWorker:
 
-    def __init__(self, entity_name, search_link, unwanted_words, links_file_exists:bool=False, parse_only:bool=False):
+    def __init__(self, entity_name, search_link, unwanted_words, links_file_exists:bool=False, parse_only:bool=False, word_to_search:str='назначить'):
         self.data_handler = DataHandler(entity_name=entity_name)
         self.search_link = search_link
         self.links_getter = TempApi()
         self.parser = MyParser(location=entity_name, unwanted_words=unwanted_words, data_hanlder=self.data_handler) 
         self.links_file_exists = links_file_exists
         self.parse_only = parse_only
+        self.word_to_search = word_to_search
 
     def get_links_from_site(self, link)->list[str]:
         links = self.links_getter.get(link)
+        self.data_handler.save_just_file_links(links)
         filelogger.warning('получили всего ссылок - {}'.format(len(links)))
         return links
         
@@ -56,7 +59,7 @@ class DecreeWorker:
                 # print(ex)
                 # print('====')
         
-        filelogger.warning('Результаты парсинга {}'.format(str(Counter(results))))
+        filelogger.warning('Parsing results {}'.format(str(Counter(results))))
         # print('PARSIN RESULTS in MAIN:::',Counter(results))
         return parsing_results        
         
@@ -82,35 +85,49 @@ class DecreeWorker:
 
 
 if __name__ == '__main__':
-    # link = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=r015700&a3=&a3type=1&a3value=&a6=&a6type=1&a6value=&a15=&a15type=1&a15value=&a7type=3&a7from=&a7to=&a7date=01.01.2018&a8=&a8type=1&a1=&a0=%ED%E0%E7%ED%E0%F7%E8%F2%FC&a16=&a16type=1&a16value=&a17=&a17type=1&a17value=&a4=&a4type=1&a4value=&a23=&a23type=1&a23value=&textpres=&sort=7&x=59&y=5'
-    # entity_name = 'орловская область'
     unwanted_words = 'api/unwanted_words.txt'
-    # worker = DecreeWorker(entity_name, link, links_file_exists=False, parse_only=False)
-    # worker.go()
-    import ast
-    already_proccessed_regions = os.listdir(r'C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions')
-    regs_n_links = open('regions_n_links.txt', 'r').read()
-    regs_n_links = ast.literal_eval(regs_n_links)
-    i=0
-    for region, link in regs_n_links.items():
-        if region in already_proccessed_regions:
-            continue
-        filelogger.warning('PARSING REGION:: {} VIA LINK {}'.format(translit(region, 'ru', reversed=True), link))
-        worker = DecreeWorker(entity_name=region, search_link=link, unwanted_words=unwanted_words, 
-                              links_file_exists=False, parse_only=False)
-        worker.go()
-        i+=1
-        if i > 5:
-            break 
+    # already_proccessed_regions = os.listdir(r'C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions')
 
+    # regs_n_links = open('regions_n_links.json', 'r')
+    # regs_n_links = json.load(regs_n_links)
+    
+    # i=0
+    # for region, link in regs_n_links.items():
+    #     if region in already_proccessed_regions:
+    #         continue
+    #     filelogger.warning('PARSING REGION:: {} VIA LINK {}'.format(translit(region, 'ru', reversed=True), link))
+    #     worker = DecreeWorker(entity_name=region, search_link=link, unwanted_words=unwanted_words, 
+    #                           links_file_exists=False, parse_only=False)
+    #     worker.go()
+    #     i+=1
+
+    link = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=cd00000&a3=&a3type=1&a3value=&a6=&a6type=1&a6value=&a15=&a15type=1&a15value=&a7type=3&a7from=&a7to=&a7date=01.12.2021&a8=&a8type=1&a1=&a0=%ED%E0%E7%ED%E0%F7%E8%F2%FC&a16=&a16type=1&a16value=&a17=&a17type=1&a17value=&a4=&a4type=1&a4value=&a23=&a23type=1&a23value=&textpres=&sort=7&x=65&y=8'
+    link = r'http://pravo.gov.ru/proxy/ips/?searchres=&bpas=cd00000&a3=&a3type=1&a3value=&a6=&a6type=1&a6value=&a15=&a15type=1&a15value=&a7type=3&a7from=&a7to=&a7date=01.06.2021&a8=&a8type=1&a1=&a0=%EE%F1%E2%EE%E1%EE%E4%E8%F2%FC&a16=&a16type=1&a16value=&a17=&a17type=1&a17value=&a4=&a4type=1&a4value=&a23=&a23type=1&a23value=&textpres=&sort=7&x=31&y=14'
+    region = 'федеральное законодательство'
+
+    WORD_TO_SEARCH = 'назначить'
+
+    worker = DecreeWorker(entity_name=region, search_link=link, unwanted_words=unwanted_words, 
+                            links_file_exists=True, parse_only=True, word_to_search=WORD_TO_SEARCH)
+
+    worker.go()
+ 
 
     #TODO: мб files downloader может наследоваться от data handler. было бы логично 
     #TODO: обработка ошибок
-    # TODO: склеить имена?
     #TODO добавить: 
-    # 1. склонение начальник/директор
-    # если в имени два слова - пометить, что неправильное имя и поправить руками.
+    # имя региона в файл?
+    # 1. склонение начальник/директор 
+    
+    #TODO:
+    # если два имени и в одном три слова, то второе имя дропнуть
+    #TODO: если имена не имена а города - дропнуть строку
     # мб через падежи? pymorphy?
+    # скрипт, который парсит логи и проверяет все ли скачалось
+    # фронт можно сделать на джанге
+    # !!! IMPORTANT !!! сделать освободить от должности 
 
 
 
+    # V интерфейс для поиска по словам?
+    

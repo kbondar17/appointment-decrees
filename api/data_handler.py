@@ -1,9 +1,11 @@
 import json
 import pickle
 from typing import Any
+import os
 from pathlib import Path
 from dataclasses import dataclass, field        
 from pathlib import Path
+from datetime import datetime
 
 from api.utils.json_validation import FileData
 from api.utils.my_logger import Log
@@ -15,24 +17,35 @@ class DataHandler:
         self.create_folders(entity_name)
         self.files_n_links = {}
     
+    def save_just_file_links(self, links:list[str]):
+        file_path = self.results_folder / 'just_file_links.txt'
+        links = '\n'.join(links)
+        with open(file_path, 'w') as w:
+            w.write(links)
+
+    def save_failed_links(self, links:list[str]):
+        file_path = self.results_folder / f'{self.region_name}_failed_links.json'
+        data = {'links':list(links), 'info':f'время парсинга {datetime.now()}'}
+        with open(file_path, 'w') as f:
+            json.dump(data, f)
+
     def add_files_n_links(self, file_n_link:dict):
         self.files_n_links.update(file_n_link)
 
     def save_files_n_links(self):
-        #сохраняем {имя_файла:ссылка}
         with open(self.files_n_links_file, 'w') as f:
             f.write(str(self.files_n_links))
 
     def save_results_json(self, data:list[FileData]):
-        filepath = str(self.results_folder) + self.region_name +  '_parsed.json'
-        data = {'parsed_data':[e.dict() for e in data]}
+        filepath = self.results_folder / (self.region_name + '_parsed.json')
+        data = {'parsed_data':[e.dict() for e in data], 'file_info':{'region':self.region_name}}
         with open(filepath, 'w') as f:
             json.dump(data, f)
             print(f'Сохранили в {filepath} в json')
 
     def save_results_pkl(self, data:list[FileData])->None:
         # TODO: сохраняет целиком
-        filepath = str(self.results_folder) + self.region_name +  '_parsed.pkl'
+        filepath = self.results_folder / (self.region_name +  '_parsed.pkl')
         data = {'parsed_data':[e for e in data]}
         with open(filepath, 'wb') as f:
             pickle.dump(data, f)
