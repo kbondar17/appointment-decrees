@@ -1,3 +1,4 @@
+import json
 import typing
 import warnings
 
@@ -54,6 +55,8 @@ class MyParser:
 
     def get_file_info(self, file_path:str)->dict[str,str]:
         file_name = Path(file_path).name
+        self.file_name = file_name
+        
         date = file_name.split('-')[-1].split('.')[0].replace('_','-')
         return {'file_name':file_name, 'date': date, 'file_path':file_path}
 
@@ -63,6 +66,9 @@ class MyParser:
 
         if not self.word_to_search.lower() in raw_text and not self.word_to_search.capitalize() in raw_text:
             raise ValueError('search word not found')
+
+        if 'освободи' in raw_text or 'Освободи' in raw_text:
+            print('освободи --- ', self.file_name)
 
         soup = BeautifulSoup(raw_text, 'html.parser')        
 
@@ -79,7 +85,7 @@ class MyParser:
     def get_appointment_lines(self)->None:
         # фльтруем по поисковому слову
         appointment_lines = [e for e in self.file_data.text_raw if self.word_to_search.lower() in e 
-                            or self.word_to_search.upper() in e]
+                            or self.word_to_search.capitalize() in e]
         
         for line in appointment_lines:
             self.file_data.appointment_lines.append({
@@ -106,13 +112,12 @@ class MyParser:
                 names.append(span)
 
         # конкатинируем, если фамилия и имя отдельно
-        if len(names) == 2:
-            if len(names[1].fact.as_dict) + len(names[0].fact.as_dict) == 3:
-                concated_name_norm = names[0].normal + ' ' + names[1].normal 
-                concated_name_norm = ' '.join(concated_name_norm.split())
-                concated_name_raw = names[0].text + ' ' + names[1].text 
-                concated_name_raw = ' '.join(concated_name_raw.split())
-                names = [{'name_raw':concated_name_raw, 'name_norm':concated_name_raw}]
+        if len(names) == 2 and (len(names[1].fact.as_dict) + len(names[0].fact.as_dict) == 3):
+            concated_name_norm = names[0].normal + ' ' + names[1].normal 
+            concated_name_norm = ' '.join(concated_name_norm.split())
+            concated_name_raw = names[0].text + ' ' + names[1].text 
+            concated_name_raw = ' '.join(concated_name_raw.split())
+            names = [{'name_raw':concated_name_raw, 'name_norm':concated_name_raw}]
         else:
             names = [{'name_raw':' '.join(span.text.split()),'name_norm':' '.join(span.normal.split())} for span in names]
         return names
@@ -120,7 +125,8 @@ class MyParser:
 
     def find_names_in_line(self)->None:
         """при нахождении имен добавляет в {'name'} """    
-        names_located = False
+        names_located = False            
+        # breakpoint()
         for line in self.file_data.appointment_lines:
             name = self._locate_names_in_string(line['raw_line'])
             if name:
@@ -157,6 +163,7 @@ class MyParser:
         for line in self.file_data.appointment_lines:
             position = line['raw_line']
             position = ' '.join(position.split())
+            # breakpoint()
             for name in line['names']:
                 position = position.replace(name['name_raw'],'')
 
@@ -202,10 +209,23 @@ class MyParser:
 
 
 if __name__ == '__main__':
-    f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\ивановская область\raw_files\-1--21_01_2002.rtf"
-    f = r"C:\Users\ironb\Downloads\П-103-26_04_2016.rtf"
-    f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\Ивановской области\raw_files\-10--13_01_2006.rtf"
+
+    # f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\ивановская область\raw_files\-1--21_01_2002.rtf"
+    # f = r"C:\Users\ironb\Downloads\П-103-26_04_2016.rtf"
+    # f = r"C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\Ивановской области\raw_files\-10--13_01_2006.rtf"
+    fed_folder = Path(r'C:\Users\ironb\прогр\Declarator\appointment-decrees\downloads\regions\федеральное законодательство\raw_files')
+    rogue_files = json.load(open('rogue_files.json', 'r'))
+    rogue_files = [e['file'] for e in rogue_files if e['err'] == "'names'"]
+    # print(rogue_files)
+    # когда много мб сплитить по ; ?
+    # освободив -569--10_03_2021.rtf
+    # -489-03_08_2020.rtf - тут и много и освободив
+    #      #     #f = rogue_files[0]
+    f = '-1192--05_05_2021.rtf'
+    f = fed_folder / f
+
+     
+
     parser = MyParser()
     from pprint import pprint
-    # parser.parse_file(f)
     pprint(parser.parse_file(f))

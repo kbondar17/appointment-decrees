@@ -5,7 +5,10 @@
 import json
 import os 
 from collections import Counter 
- 
+import structlog
+log = structlog.get_logger()
+
+
 from transliterate import translit
 from api.temp_api import TempApi    
 # from api.converter import MyParser
@@ -44,6 +47,7 @@ class DecreeWorker:
     def parse_folder(self, files_folder)->list[FileData]:
         parsing_results = []
         results = []
+        rogue_files = []
         for file in os.listdir(files_folder):
             file_path = os.path.join(files_folder, file)
             try:
@@ -52,14 +56,15 @@ class DecreeWorker:
                 results.append('ok')
             except Exception as ex:
                 results.append(str(ex))
-                # import traceback
-                # traceback.print_exc()
-                # print('===ОШИБКА===') # TODO: вынести это в декоратор
-                # # print(files_folder)
-                # print(ex)
-                # print('====')
-        
-        filelogger.warning('Parsing results {}'.format(str(Counter(results))))
+                rogue_files.append({
+                    'err':str(ex),
+                    'file':file,
+                })
+
+        with open('rogue_files.json', 'w') as f:
+            json.dump(rogue_files, f)
+
+        filelogger.warning('Parsing results {}'.format(Counter(results)))
         # print('PARSIN RESULTS in MAIN:::',Counter(results))
         return parsing_results        
         
